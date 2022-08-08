@@ -90,17 +90,6 @@ main:
 lw $s1,true
 bne $s1,1,Exit 
 jal drawBackground
-addi $sp, $sp, -4 
-sw $s1, 0($sp)
-	
-addi $sp, $sp, -4  
-sw $s2, 0($sp)
-	
-addi $sp, $sp, -4  
-sw $s3, 0($sp)
-
-addi $sp, $sp, -4  
-sw $s4, 0($sp)
 
 jal keyboardChanges
 lw $s0, defaultCharX
@@ -175,13 +164,6 @@ sw $t4, ($t1)
 jr $ra
 
 keyboardChanges:
-lw $t3, 0($sp)
-lw $t4, 4($sp)
-lw $t5, 8($sp)
-lw $t7, 12($sp)
-addi $sp, $sp, 16 # adjust stack pointer
-
-
 li $t9, 0xffff0000 
 lw $t8, 0($t9) 
 beq $t8, 1, keypress_happened 
@@ -255,5 +237,11 @@ addi $a0, $zero, 0
 
 la $a0, upDis #get address
 addi $a1, $s3, 1
+sw $a1 0($a0) #save new value
+jr $ra
+
+DrawD
+la $a0, defaultCharX #get address
+addi $a1, $s0, 32
 sw $a1 0($a0) #save new value
 jr $ra
