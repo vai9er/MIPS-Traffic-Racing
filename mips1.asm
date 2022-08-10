@@ -176,9 +176,9 @@ leftDis: .word 2
 rightDis: .word 1
 downDis: .word 11
 
-downCar1: .word 132
-downCar1upDis: .word 11
-downCar1downDis: .word 0
+downCar1: .word 3080
+downCar1upDis: .word 0
+downCar1downDis: .word 11
 
 downCar2: .word 164
 downCar2upDis: .word 11
@@ -217,6 +217,14 @@ beq $s4, 12,loseLife
 beq $s5, 4, loseLife
 beq $s6, 4, loseLife
 
+addi $s3, $zero, 0
+addi $s4, $zero, 0
+lw $s3, downCar1
+lw $s4, defaultCharX
+
+beq $s3,$s4,loseLife
+
+
 jal keyboardChanges
 
 
@@ -242,10 +250,9 @@ jal sleep
 
 j main
 
-
 sleep:
 li $v0, 32  
-li $a0, 25
+li $a0, 10
 syscall
 jr $ra
 
@@ -267,29 +274,27 @@ gameOver:
 updateCar:
 la $t1,downCar1
 lw $t2, 0($t1)
-beq $t2,3204, fixd1
-addi $t2,$t2,128
+beq $t2,520, fixd1
+addi $t2,$t2,-256
 sw $t2, 0($t1)
 
-la $t1,downCar2, 
-lw $t2, 0($t1)
-beq $t2,3080, fixd2
 
-addi $t2,$t2,128
-sw $t2, 0($t1)
 jr $ra
 
 fixd1:
 la $t1,downCar1
 lw $t2, 0($t1)
-addi $t2, $zero, 132
+addi $t2, $zero, 3080
 sw $t2, 0($t1)
 jr $ra
 
 fixd2:
-addi $t2, $zero, 164
+la $t1,downCar2
+lw $t2, 0($t1)
+addi $t2, $zero, 132
 sw $t2, 0($t1)
 jr $ra
+
 loseLife:
 la $a0, rightDis #get address
 addi $a1, $zero, 1
