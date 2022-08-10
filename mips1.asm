@@ -219,20 +219,33 @@ beq $s6, 4, loseLife
 
 jal keyboardChanges
 
+
+lw $s0, downCar1
+addi $sp, $sp, -4
+sw $s0, 0($sp)
+jal drawCar
+li $v0, 32  
+li $a0, 10
+syscall
+
 lw $s0, defaultCharX
 addi $sp, $sp, -4
 sw $s0, 0($sp)
-jal drawCar 
+jal drawCar
+li $v0, 32  
+li $a0, 10
+syscall
+
 jal drawBackground
 jal updateCar
- 
+jal sleep
 
 j main
 
 
 sleep:
 li $v0, 32  
-li $a0, 10
+li $a0, 25
 syscall
 jr $ra
 
@@ -254,17 +267,29 @@ gameOver:
 updateCar:
 la $t1,downCar1
 lw $t2, 0($t1)
-
+beq $t2,3204, fixd1
 addi $t2,$t2,128
 sw $t2, 0($t1)
 
-la $t1,downCar2
+la $t1,downCar2, 
 lw $t2, 0($t1)
+beq $t2,3080, fixd2
 
 addi $t2,$t2,128
 sw $t2, 0($t1)
 jr $ra
-	
+
+fixd1:
+la $t1,downCar1
+lw $t2, 0($t1)
+addi $t2, $zero, 132
+sw $t2, 0($t1)
+jr $ra
+
+fixd2:
+addi $t2, $zero, 164
+sw $t2, 0($t1)
+jr $ra
 loseLife:
 la $a0, rightDis #get address
 addi $a1, $zero, 1
