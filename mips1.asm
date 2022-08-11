@@ -24,8 +24,18 @@
 # Additional features that were implemented successfully
 # - Additional feature a/b/c (choose the ones that apply)
 # 	none
-# Link to the video demo
-# - Insert YouTube/MyMedia/other URL here and make sure the video is accessible
+
+################################################
+# Link to the video demo                       #
+# - https://www.youtube.com/watch?v=yejvYh341A8#
+################################################
+
+#######################################################
+# THE VIDEO ABOVE IS  JUST THE GAME FUNCTIONALITY######
+# WATCH THIS VIDEO FOR AN IN DEPTH CODE EXPLANATION####
+# - https://www.youtube.com/watch?v=4F7BzP4sU1Y&t=18s #
+#######################################################
+
 #
 # Any additional information that the TA needs to know:
 # - Write here, if any
