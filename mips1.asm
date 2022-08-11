@@ -257,12 +257,20 @@ x: .word 0
 
 speed: .word 1
 
+
+pickupLongev: .word 3000
+
+shouldDraw: .word 1000
+healthPickupLane: .word 0
+healthPickupHeight: .word 0
+
 .eqv displayAddress 0x10008000
 .eqv black 0xff000000
 .eqv red 0xff0000
 .eqv blue 0x0000ff
 .eqv yellow 0xffff00
 .eqv orange 0xffa500
+.eqv pink 0xffc0cb
 
 .text
 .globl main
@@ -399,11 +407,13 @@ addi $sp, $sp, -4
 sw $s0, 0($sp)
 jal drawCar
 
+
 jal sleep
 
 jal drawBackground
 
 j gameLoop
+
 
 sleep:
 la $t1,speed
@@ -412,6 +422,7 @@ lw $t2, 0($t1)
 beq $t2,1,slow
 beq $t2,2,medium
 beq $t2,3,hard
+
 jr $ra
 
 slow:
@@ -428,7 +439,7 @@ jr $ra
 
 hard:
 li $v0, 32  
-li $a0, 1
+li $a0, 75
 syscall
 jr $ra
 
@@ -547,7 +558,7 @@ updateCar:
 la $t1,downCar1
 lw $t2, 0($t1)
 beq $t2,520, fixd1
-addi $t2,$t2,-256
+addi $t2,$t2,-128
 sw $t2, 0($t1)
 
 la $t1,downCar2
@@ -565,7 +576,7 @@ sw $t2, 0($t1)
 la $t1,upCar2
 lw $t2, 0($t1)
 beq $t2,2920, fixu2
-addi $t2,$t2,256
+addi $t2,$t2,128
 sw $t2, 0($t1)
 
 jr $ra
@@ -813,7 +824,7 @@ drawECar3:
 lw $t2, 0($sp) #stores coordinate
 addi $sp, $sp, 4
 li $t3, black
-li $t4, orange
+li $t4, pink
 li $t1, displayAddress
 
 add $t1, $t1, $t2
