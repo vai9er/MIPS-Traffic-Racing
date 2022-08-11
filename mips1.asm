@@ -13,10 +13,17 @@
 #
 # Basic features that were implemented successfully
 # - Basic feature a/b/c (choose the ones that apply)
-#
+# 	1a
+# 	1b
+# 	2a
+# 	2b
+# 	3-everything
+# 	4a
+# 	4b
+# 	4c
 # Additional features that were implemented successfully
 # - Additional feature a/b/c (choose the ones that apply)
-#
+# 	none
 # Link to the video demo
 # - Insert YouTube/MyMedia/other URL here and make sure the video is accessible
 #
