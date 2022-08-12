@@ -11,36 +11,44 @@
 # - Display height in pixels: 256
 # - Base Address for Display: 0x10008000
 #
-# Basic features that were implemented successfully
-# - Basic feature a/b/c (choose the ones that apply)
-# 	1a
-# 	1b
-# 	2a
-# 	2b
-# 	3-everything
-# 	4a
-# 	4b
-# 	4c
-# Additional features that were implemented successfully
-# - Additional feature a/b/c (choose the ones that apply)
-# 	none
-
-################################################
-# Link to the video demo                       #
-# - https://www.youtube.com/watch?v=yejvYh341A8#
-################################################
-
 #######################################################
-# THE VIDEO ABOVE IS  JUST THE GAME FUNCTIONALITY######
-# WATCH THIS VIDEO FOR AN IN DEPTH CODE EXPLANATION####
-# - https://www.youtube.com/watch?v=4F7BzP4sU1Y&t=18s #
+## Basic features that were implemented successfully###
+## - Basic feature a/b/c (choose the ones that apply)##
+## 	1a                                           ##
+## 	1b                                           ##
+## 	2a                                           ##
+## 	2b                                           ##
+## 	3-everything                                 ##
+##	4a                                           ##
+## 	4c                                           ##
 #######################################################
 
-#
-# Any additional information that the TA needs to know:
-# - Write here, if any
-#
-######################################################################
+###########################################################
+## Additional features that were implemented successfully###
+## - Additional feature a/b/c (choose the ones that apply)##
+## 	5c- Challenging Levels                           ##
+###########################################################
+
+###################################################
+## Link to the video demo                        ##
+## - https://www.youtube.com/watch?v=yejvYh341A8 ##
+###################################################
+
+###########################################################
+## THE VIDEO ABOVE IS  JUST THE GAME FUNCTIONALITY#########
+## WATCH THE VIDEO BELOW FOR AN IN DEPTH CODE EXPLANATION##
+###########################################################
+
+########################################################
+## Link to the code explanation                        #
+## - https://www.youtube.com/watch?v=yejvYh341A8 #######
+########################################################
+
+#############################################################################
+## Any additional information that the TA needs to know:                   ## 
+## - Write here, if any                                                    ##
+## Look at line Line 38!!!!!!!!!!!!                                        ##
+#############################################################################
 
 # Demo for painting
 # Bitmap Display Configuration:
